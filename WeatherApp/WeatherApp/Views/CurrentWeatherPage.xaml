@@ -17,23 +17,23 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <BoxView Grid.RowSpan="2" BackgroundColor="#7585BA" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-            <Image Aspect="AspectFill" Grid.RowSpan="2" Source="bg.png" Opacity="0.2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            <Image x:Name="bgImg" Aspect="AspectFill" Grid.RowSpan="2" Source="bg.png" Opacity="0.2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
             <ImageButton Source="menu.png" Margin="20" WidthRequest="23" HeightRequest="15" HorizontalOptions="Start" VerticalOptions="Center"/>
             <Grid Grid.Row="1">
                 <StackLayout Spacing="20">
                     <StackLayout Orientation="Horizontal" Spacing="50" HorizontalOptions="Center">
                         <StackLayout VerticalOptions="Center">
-                            <Image Source="cloud.png" WidthRequest="67" HeightRequest="50"/>
-                            <Label Text="Cloudy" TextColor="White" FontSize="13" HorizontalOptions="Center"/>
+                            <Image x:Name="iconImg" Source="cloud.png" WidthRequest="67" HeightRequest="50"/>
+                            <Label x:Name="descriptionTxt" Text="Cloudy" TextColor="White" FontSize="13" HorizontalOptions="Center"/>
                         </StackLayout>
                         <StackLayout VerticalOptions="Center">
-                            <Label Text="LONDON" TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label Text="SATURDAY, NOV 30" TextColor="White" FontSize="13" HorizontalOptions="Center"/>
+                            <Label x:Name="cityTxt" Text="LONDON" TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label x:Name="dateTxt" Text="SATURDAY, NOV 30" TextColor="White" FontSize="13" HorizontalOptions="Center"/>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="0">
-                            <Label Text="25" TextColor="White" FontSize="150" HorizontalOptions="Center"/>
+                            <Label x:Name="temperatureTxt" Text="25" TextColor="White" FontSize="150" HorizontalOptions="Center"/>
                             <Label Text="°" TextColor="White" FontSize="150" HorizontalOptions="Center"/>
                         </StackLayout>
                         <Label Text="CELSIUS" Margin="0,-30, 0, 0" TextColor="White" FontSize="13" HorizontalOptions="Center"/>
@@ -48,7 +48,7 @@
                         <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
                             <Image Source="humidity.png" HeightRequest="25" HorizontalOptions="Center"/>
                             <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                                <Label Text="50%" TextColor="White" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                <Label x:Name="humidityTxt" Text="50%" TextColor="White" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
                                 <Label Text="Humidity" TextColor="White" Margin="0,-5,0,0" FontSize="11" HorizontalOptions="Center"/>
                             </StackLayout>
                         </StackLayout>
@@ -87,11 +87,11 @@
             </Grid.ColumnDefinitions>
             <Grid BackgroundColor="#758ABA" Opacity="0.6">
                 <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                    <Label Text="Sunday" TextColor="White" FontSize="13" HorizontalOptions="Center"></Label>
-                    <Label Margin="0, -5, 0, 0" Text="01 Feb" TextColor="White" FontSize="10" HorizontalOptions="Center"></Label>
-                    <Image Source="cloud.png" Margin="0, 20" WidthRequest="30" HeightRequest="22"></Image>
+                    <Label x:Name="dayOneTxt" Text="Sunday" TextColor="White" FontSize="13" HorizontalOptions="Center"></Label>
+                    <Label x:Name="dateOneTxt" Margin="0, -5, 0, 0" Text="01 Feb" TextColor="White" FontSize="10" HorizontalOptions="Center"></Label>
+                    <Image x:Name="iconOneImg" Source="cloud.png" Margin="0, 20" WidthRequest="30" HeightRequest="22"></Image>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="22" TextColor="White" FontSize="23" HorizontalOptions="Center"></Label>
+                        <Label x:Name="tempOneTxt" Text="22" TextColor="White" FontSize="23" HorizontalOptions="Center"></Label>
                         <Label Text="°" TextColor="White" FontSize="23" HorizontalOptions="Center"></Label>
                     </StackLayout>
                 </StackLayout>
@@ -99,34 +99,34 @@
 
             <Grid BackgroundColor="#758ABA" Opacity="0.7" Grid.Column="1">
                 <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                    <Label Text="Monday" TextColor="White" FontSize="13" HorizontalOptions="Center"></Label>
-                    <Label Margin="0, -5, 0, 0" Text="02 Feb" TextColor="White" FontSize="10" HorizontalOptions="Center"></Label>
-                    <Image Source="cloud.png" Margin="0, 20" WidthRequest="30" HeightRequest="22"></Image>
+                    <Label x:Name="dayTwoTxt" Text="Monday" TextColor="White" FontSize="13" HorizontalOptions="Center"></Label>
+                    <Label x:Name="dateTwoTxt" Margin="0, -5, 0, 0" Text="02 Feb" TextColor="White" FontSize="10" HorizontalOptions="Center"></Label>
+                    <Image x:Name="IconTwoImg" Source="cloud.png" Margin="0, 20" WidthRequest="30" HeightRequest="22"></Image>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="17" TextColor="White" FontSize="23" HorizontalOptions="Center"></Label>
+                        <Label x:Name="tempTwoTxt" Text="17" TextColor="White" FontSize="23" HorizontalOptions="Center"></Label>
                         <Label Text="°" TextColor="White" FontSize="23" HorizontalOptions="Center"></Label>
                     </StackLayout>
                 </StackLayout>
             </Grid>
             <Grid BackgroundColor="#758ABA" Opacity="0.8" Grid.Column="2">
                 <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                    <Label Text="Tuesday" TextColor="White" FontSize="13" HorizontalOptions="Center"></Label>
-                    <Label Margin="0, -5, 0, 0" Text="03 Feb" TextColor="White" FontSize="10" HorizontalOptions="Center"></Label>
-                    <Image Source="cloud.png" Margin="0, 20" WidthRequest="30" HeightRequest="22"></Image>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="28" TextColor="White" FontSize="23" HorizontalOptions="Center"></Label>
-                        <Label Text="°" TextColor="White" FontSize="23" HorizontalOptions="Center"></Label>
+                    <Label x:Name="dayThreeTxt" Text="Tuesday" TextColor="White" FontSize="13" HorizontalOptions="Center"/>
+                    <Label x:Name="dateThreeTxt" Margin="0,-5,0,0" Text="03 Dec" TextColor="White" FontSize="10" HorizontalOptions="Center"/>
+                    <Image x:Name="iconThreeImg" Source="cloud.png" Margin="0,20" WidthRequest="30" HeightRequest="22"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="0">
+                        <Label x:Name="tempThreeTxt" Text="28" TextColor="White" FontSize="23" HorizontalOptions="Center"/>
+                        <Label Text="°" TextColor="White" FontSize="23" HorizontalOptions="Center"/>
                     </StackLayout>
                 </StackLayout>
             </Grid>
             <Grid BackgroundColor="#758ABA" Opacity="0.9" Grid.Column="3">
                 <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                    <Label Text="Wednesday" TextColor="White" FontSize="13" HorizontalOptions="Center"></Label>
-                    <Label Margin="0, -5, 0, 0" Text="04 Feb" TextColor="White" FontSize="10" HorizontalOptions="Center"></Label>
-                    <Image Source="cloud.png" Margin="0, 20" WidthRequest="30" HeightRequest="22"></Image>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="25" TextColor="White" FontSize="23" HorizontalOptions="Center"></Label>
-                        <Label Text="°" TextColor="White" FontSize="23" HorizontalOptions="Center"></Label>
+                    <Label x:Name="dayFourTxt" Text="Wednesday" TextColor="White" FontSize="13" HorizontalOptions="Center"/>
+                    <Label x:Name="dateFourTxt" Margin="0,-5,0,0" Text="04 Dec" TextColor="White" FontSize="10" HorizontalOptions="Center"/>
+                    <Image x:Name="iconFourImg" Source="cloud.png" Margin="0,20" WidthRequest="30" HeightRequest="22"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="0">
+                        <Label x:Name="tempFourTxt" Text="25" TextColor="White" FontSize="23" HorizontalOptions="Center"/>
+                        <Label Text="°" TextColor="White" FontSize="23" HorizontalOptions="Center"/>
                     </StackLayout>
                 </StackLayout>
             </Grid>
